@@ -1,16 +1,15 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Usuario } from '../entities/usuario.entity';
-//import { Bcrypt } from '../../auth/bcrypt/bcrypt';
 import { Repository } from 'typeorm';
+import { Bcrypt } from '../../auth/bcrypt/bcrypt';
 
 @Injectable()
 export class UsuarioService {
-    bcrypt: any;
     constructor(
         @InjectRepository(Usuario)
         private usuarioRepository: Repository<Usuario>,
-       // private bcrypt: Bcrypt
+        private bcrypt: Bcrypt
     ) {}
 
     async findAll(): Promise<Usuario[]> {

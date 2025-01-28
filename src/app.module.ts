@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CategoriaModule } from './categoria/categoria.module';
 import { ProdutoModule } from './produto/produto.module';
+import { UsuarioController } from './usuario/controllers/usuario.controller';
+import { UsuarioModule } from './usuario/usuario.module';
 
  
 @Module({
@@ -18,7 +20,8 @@ import { ProdutoModule } from './produto/produto.module';
       logging: true,
     }),
     CategoriaModule,
-    ProdutoModule
+    ProdutoModule,
+    UsuarioModule
   ],
   controllers: [],
   providers: [],
